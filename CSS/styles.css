@@ -1,0 +1,329 @@
+* {
+    text-align: center;
+  }
+  
+  body {
+    font-family: "Roboto Mono", monospace;
+    min-height: 400px;
+    background-image: url("https://images.unsplash.com/photo-1638613067237-b1127ef06c00?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-color: #111;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: 0.5s;
+  }
+
+  .alura-logo:hover {
+    transform: scale(1.10);
+    transition: 0.5s;
+  }
+  
+  table {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    animation: changeBorderColor 4s infinite linear;
+  }
+
+  .imgTreinador {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 15%;
+  }
+
+  .imgElemento {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 0.15rem;
+  }
+  
+  h1 {
+    color: #002351;
+    text-shadow: 2px 2px 1px #00235150;
+  }
+  
+  th,
+  tr,
+  td {
+    border: solid 1px #000;
+    color: #002351;
+    text-shadow: 1px 1px 1px #00235150;
+  }
+  
+  button {
+    margin: 5% auto;
+  }
+
+  .victory,
+  .lose,
+  .bonus,
+  .reset,
+  .remove {
+    cursor: pointer;
+    color: #000;
+    text-shadow: 1px 1px 1px #00000050;
+    border-radius: 5px;
+    border: 1px solid #000;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .victory {
+    background-color: #00FF00;
+  }
+
+  .lose {
+    background-color: #FF0000;
+  }
+
+  .bonus {
+    background-color: #FFD700;
+  }
+
+  .reset {
+    background-color: #00aaff;
+  }
+
+  .remove {
+    background-color: #b22222;
+  }
+
+  .victory:hover,
+  .lose:hover,
+  .bonus:hover,
+  .reset:hover,
+  .remove:hover {
+    box-shadow: 0 0 10px 2px #f5f5f5;
+  }
+
+  .addContainer {
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #addTreinador,
+  #addImagem {
+    margin: 0.5rem;
+    padding: 0.5rem 0.25rem;
+    background-color: #87ceeb;
+    color: #002351;
+    border-radius: 3px;
+    border: 1px solid #6a5acd;
+    box-shadow: 1px 1px 4px #002351;
+  }
+
+  #addTreinador:focus,
+  #addImagem:focus {
+    background-color: #3fc9ff;
+    outline: none;
+    text-align: start;
+  }
+
+  #addTreinador:focus::placeholder,
+  #addImagem:focus::placeholder {
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  #addTreinador::placeholder,
+  #addImagem::placeholder {
+    opacity: 1;
+    color: #191970;
+    text-align: start;
+    transition: 0.2s;
+  }
+
+  #novoTreinador {
+    margin: 1.5rem 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #f5f5f5;
+    color: #002351;
+    border: 1px solid #002351;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  #novoTreinador:hover,
+  #novoTreinador:focus {
+    box-shadow: 0 0 5px 1px #6a5acd;
+  }
+  
+  #novoTreinador:active {
+    background-color: #42b6ff;
+    box-shadow: 0 0 10px 2px #6a5acd;
+  }
+
+  #elementos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #87ceeb;
+    color: #191970;
+    margin: 1.5rem 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #002351;
+    cursor: pointer;
+  }
+
+  #elementos:hover,
+  #elementos:focus {
+    box-shadow: 0 0 5px 1px #37a1cb;
+  }
+
+  #elementos:active {
+    background-color: #c6e8fd;
+    box-shadow: 0 0 10px 2px #37a1cb;
+  }
+
+  #resultado {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #resultado img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.2rem;
+    padding: 0.25rem;
+  }
+
+  .água {
+    background-color: #298ed2;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 1px #298ed2;
+  }
+
+  .fogo {
+    background-color: #ff4916;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #ff4916;
+}
+
+  .grama {
+    background-color: #2ecc71;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #2ecc71;
+}
+
+  .elétrico {
+    background-color: #f3d912;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #f3d912;
+}
+
+  .gelo {
+    background-color: #a5dcf2;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #a5dcf2;
+}
+
+  .lutador {
+    background-color: #ff1900;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #ff1900;
+}
+
+  .voador {
+    background-color: #71bddb;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #71bddb;
+}
+
+  .psíquico {
+    background-color: #d779fd;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #d779fd;
+}
+
+  .veneno {
+    background-color: #9b59b6;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #9b59b6;
+}
+
+  .terra {
+    background-color: #e67e22;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #e67e22;
+}
+
+  .pedra {
+    background-color: #95a5a6;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #95a5a6;
+}
+
+  .inseto {
+    background-color: #abd628;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #abd628;
+}
+
+  .fantasma {
+    background-color: #483d8b;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #483d8b;
+}
+
+  .noturno {
+    background-color: #272e34;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #272e34;
+}
+
+  .aço {
+    background-color: #95a5a6;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #95a5a6;
+}
+
+  .fada {
+    background-color: #ed7397;
+    border-radius: 15%; 
+    box-shadow: 0 0 5px 2px #ed7397;
+}
+
+  .dragão {
+    background-color: #191970;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #191970;
+  }
+
+  .normal {
+    background-color: #95a5a6;
+    border-radius: 15%;
+    box-shadow: 0 0 5px 2px #95a5a6;
+  }
+
+  /* responsividade */
+  @media (max-width:690px) {
+    body {
+        background-image: url('https://wallpapercave.com/wp/wp10311743.png');
+    }
+  }
+
+  @keyframes changeBorderColor {
+    0% {
+      box-shadow: 0 0 10px 5px red;
+    }
+    25% {
+      box-shadow: 0 0 10px 7px blue;
+    }
+    50% {
+      box-shadow: 0 0 10px 5px green;
+    }
+    75% {
+      box-shadow: 0 0 10px 7px yellow;
+    }
+    100% {
+      box-shadow: 0 0 10px 5px orange, 0 0 10px 10px purple;
+    }
+  }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Jogos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Classificação Pokémon</h1>
+    <table style="width:100%">
+      <thead>
+        <tr>
+          <th>Treinador</th>
+          <th>Vitórias</th>
+          <th>Derrotas</th>
+          <th>Bônus</th>
+          <th>Pontuação Total</th>
+          <th colspan="5">Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaJogadores">
+      </tbody>
+    </table>
+    <div class="addContainer">
+      <input type="text" name="addTreinador" id="addTreinador" placeholder="Digite o seu nome..." maxlength="20">
+      <input type="text" name="addImagem" id="addImagem" placeholder="Digite a URL da imagem..">
+      <button id="elementos">Sortear Elementos</button>
+      <div id="resultado" class="elementos-sorteados"></div>
+      <button id="novoTreinador" onclick="adicionarTreinador()">Adicionar Treinador</button>
+    </div>
+      <a href="https://alura.com.br/" target="_blank">
+      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+    <script src="JS/script.js"></script>
+  </body>
+</html>
