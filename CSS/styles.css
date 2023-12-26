@@ -1,62 +1,453 @@
 * {
-    text-align: center;
-  }
-  
-  body {
-    font-family: "Roboto Mono", monospace;
-    min-height: 400px;
-    background-image: url("https://images.unsplash.com/photo-1638613067237-b1127ef06c00?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-color: #111;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .alura-logo {
-    width: 40px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    transition: 0.5s;
-  }
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
 
-  .alura-logo:hover {
-    transform: scale(1.10);
-    transition: 0.5s;
-  }
-  
+body {
+  font-family: "Roboto Mono", monospace;
+  min-height: 400px;
+}
+
+.primeira-secao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/7980451.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2.4rem 0;
+  width: 100%;
+}
+
+.segunda-secao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #4A90E2, #36D1DC, #71e5ff, #36D1DC, #4A90E2);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top: 1px solid #002351;
+  width: 100%;
+}
+
+.secao-info {
+  display: none;
+}
+
+.table-title {
+  margin-top: 2.5rem;
+}
+
+.title h1 {
+  margin: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  color: #483d8b;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.title {
+  padding: 0.01rem 0.64rem;
+  background: linear-gradient(-35deg, #87CEFA, #81e6f3, #FFFFFF);
+  max-width: 14.609rem;
+  border-radius: 12px;
+  box-shadow: 1px 1px 10px 3px #81e6f3;
+}
+
+.title:hover {
+  transform: scale(0.9);
+  transition: 1s;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: 0.5s;
+}
+
+.alura-logo:hover {
+  transform: scale(1.10);
+  transition: 0.5s;
+}
+
+table {
+  border: 2px solid #000;
+  border-collapse: collapse;
+  animation: changeBorderColor 4s infinite linear;
+  backdrop-filter: blur(6px);
+  margin: auto 2%;
+  width: 80%;
+}
+
+.addContainer {
+  padding: 0.7rem 1.2rem 0;
+  background: linear-gradient(to bottom left, #173049, #5bdef0, #FFFFFF);
+  width: 12.188rem;
+  border-radius: 5px;
+  margin: auto;
+  box-shadow: 1px 1px 10px 3px #00BCD4;
+}
+
+.addContainer h2 {
+  margin: 1.4rem auto 0.5rem;
+  font-size: 20px;
+  color: #002351;
+  text-shadow: 1px 1px 1px #00235159;
+}
+
+.imgTreinador {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.25rem 0;
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 15%;
+}
+
+.imgElemento {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 0.15rem;
+}
+
+.table-title {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  color: #002351;
+  text-shadow: 2px 2px 1px #00235150;
+}
+
+td {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.treinador,
+.vitórias,
+.derrotas,
+.bônus,
+.pontuação-total,
+.ações {
+  width: 8rem;
+  margin: 5% 20px;
+  padding: 5px;
+}
+
+th,
+tr,
+td {
+  border: solid 1px #000;
+  color: #002351;
+  text-shadow: 1px 1px 1px #00235150;
+}
+
+button {
+  margin: 5% 20px;
+}
+
+.victory,
+.lose,
+.bonus,
+.reset,
+.remove {
+  cursor: pointer;
+  color: #000;
+  text-shadow: 1px 1px 1px #00000050;
+  border-radius: 5px;
+  border: 1px solid #000;
+  transition: box-shadow 0.3s ease-in-out;
+  padding: 3%;
+}
+
+.victory {
+  background-color: #00FF00;
+}
+
+.lose {
+  background-color: #FF0000;
+}
+
+.bonus {
+  background-color: #FFD700;
+}
+
+.reset {
+  background-color: #00aaff;
+}
+
+.remove {
+  background-color: #b22222;
+}
+
+.victory:hover,
+.lose:hover,
+.bonus:hover,
+.reset:hover,
+.remove:hover {
+  box-shadow: 0 0 10px 2px #f5f5f5;
+}
+
+.addContainer {
+  margin-top: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#addTreinador,
+#addImagem {
+  margin: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  background-color: #87ceeb;
+  color: #002351;
+  border-radius: 3px;
+  border: 1px solid #6a5acd;
+  box-shadow: 1px 1px 4px #002351;
+  transition: transform 0.5s;
+}
+
+#addTreinador:focus,
+#addImagem:focus {
+  background-color: #3fc9ff;
+  outline: none;
+  text-align: start;
+  transform: scale(1.05);
+  transition: transform 1s;
+}
+
+#addTreinador:focus::placeholder,
+#addImagem:focus::placeholder {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#addTreinador::placeholder,
+#addImagem::placeholder {
+  opacity: 1;
+  color: #191970;
+  text-align: start;
+  transition: 0.2s;
+}
+
+#novoTreinador {
+  margin: 1.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background-color: #f5f5f5;
+  color: #002351;
+  border: 1px solid #002351;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#novoTreinador:hover,
+#novoTreinador:focus {
+  box-shadow: 0 0 5px 1px #6a5acd;
+}
+
+#novoTreinador:active {
+  background-color: #42b6ff;
+  box-shadow: 0 0 10px 2px #6a5acd;
+}
+
+#elementos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #87ceeb;
+  color: #191970;
+  margin: 1.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #002351;
+  cursor: pointer;
+}
+
+#elementos:hover,
+#elementos:focus {
+  box-shadow: 0 0 5px 1px #37a1cb;
+}
+
+#elementos:active {
+  background-color: #c6e8fd;
+  box-shadow: 0 0 10px 2px #37a1cb;
+}
+
+#resultado {
+  display: flex;
+  flex-direction: row;
+}
+
+#resultado img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.2rem;
+  padding: 0.25rem;
+}
+
+.água {
+  background-color: #298ed2;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 1px #298ed2;
+}
+
+.fogo {
+  background-color: #ff4916;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #ff4916;
+}
+
+.grama {
+  background-color: #2ecc71;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #2ecc71;
+}
+
+.elétrico {
+  background-color: #f3d912;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #f3d912;
+}
+
+.gelo {
+  background-color: #a5dcf2;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #a5dcf2;
+}
+
+.lutador {
+  background-color: #ff1900;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #ff1900;
+}
+
+.voador {
+  background-color: #71bddb;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #71bddb;
+}
+
+.psíquico {
+  background-color: #d779fd;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #d779fd;
+}
+
+.veneno {
+  background-color: #9b59b6;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #9b59b6;
+}
+
+.terra {
+  background-color: #e67e22;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #e67e22;
+}
+
+.pedra {
+  background-color: #95a5a6;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #95a5a6;
+}
+
+.inseto {
+  background-color: #abd628;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #abd628;
+}
+
+.fantasma {
+  background-color: #483d8b;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #483d8b;
+}
+
+.noturno {
+  background-color: #272e34;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #272e34;
+}
+
+.aço {
+  background-color: #95a5a6;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #95a5a6;
+}
+
+.fada {
+  background-color: #ed7397;
+  border-radius: 15%; 
+  box-shadow: 0 0 5px 2px #ed7397;
+}
+
+.dragão {
+  background-color: #191970;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #191970;
+}
+
+.normal {
+  background-color: #95a5a6;
+  border-radius: 15%;
+  box-shadow: 0 0 5px 2px #95a5a6;
+}
+
+.footer {
+  background-image: url("");
+  margin: 3.5rem auto;
+  padding: 1rem 0.5rem;
+  color: #fff;
+  width: fit-content;
+  border: 1px solid #191970;
+  border-radius: 1rem;
+  backdrop-filter: blur(3px);
+  box-shadow: 1px 1px 10px 3px #8228d6;
+}
+
+.footer h2 {
+  font-family: cursive;
+  background: linear-gradient(to right, #0033cc, #6633ff, #3366ff, #0033cc);
+  background-clip: text;
+  color: transparent; 
+  font-size: 18px;
+}
+
+/* responsividade */
+@media (max-width:1024px) {
   table {
-    border: 2px solid #000;
-    border-collapse: collapse;
-    animation: changeBorderColor 4s infinite linear;
+    width: 50%;
   }
 
-  .imgTreinador {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 15%;
+  tr {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
   }
 
-  .imgElemento {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin: 0 0.15rem;
-  }
-  
-  h1 {
-    color: #002351;
-    text-shadow: 2px 2px 1px #00235150;
-  }
-  
-  th,
-  tr,
   td {
-    border: solid 1px #000;
-    color: #002351;
-    text-shadow: 1px 1px 1px #00235150;
+    padding: 2%;
   }
-  
-  button {
-    margin: 5% auto;
+
+  thead {
+    display: none;
   }
 
   .victory,
@@ -64,266 +455,130 @@
   .bonus,
   .reset,
   .remove {
-    cursor: pointer;
-    color: #000;
-    text-shadow: 1px 1px 1px #00000050;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 6rem;
+  }
+
+  td:first-child {
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3),
+  td:nth-child(4),
+  td:nth-child(5) {
     border-radius: 5px;
-    border: 1px solid #000;
-    transition: box-shadow 0.3s ease-in-out;
+    margin: 2% auto;
+    width: 6rem;
   }
 
-  .victory {
-    background-color: #00FF00;
+  td:nth-child(6),
+  td:nth-child(7),
+  td:nth-child(8),
+  td:nth-child(9),
+  td:nth-child(10) {
+    border-left: none;
+    border-right: none;
+    border-color: #272e34;
+    border-radius: 17%;
   }
 
-  .lose {
-    background-color: #FF0000;
+  td:nth-child(6) {
+    border-top: none
   }
 
-  .bonus {
-    background-color: #FFD700;
+  td:nth-child(10) {
+    border-bottom: none;
   }
 
-  .reset {
-    background-color: #00aaff;
+  #tabelaJogadores {
+    display: grid;
   }
 
-  .remove {
-    background-color: #b22222;
-  }
-
-  .victory:hover,
-  .lose:hover,
-  .bonus:hover,
-  .reset:hover,
-  .remove:hover {
-    box-shadow: 0 0 10px 2px #f5f5f5;
-  }
-
-  .addContainer {
-    margin-top: 2rem;
-    position: relative;
+  .secao-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  #addTreinador,
-  #addImagem {
-    margin: 0.5rem;
-    padding: 0.5rem 0.25rem;
-    background-color: #87ceeb;
-    color: #002351;
-    border-radius: 3px;
-    border: 1px solid #6a5acd;
-    box-shadow: 1px 1px 4px #002351;
-  }
-
-  #addTreinador:focus,
-  #addImagem:focus {
-    background-color: #3fc9ff;
-    outline: none;
-    text-align: start;
-  }
-
-  #addTreinador:focus::placeholder,
-  #addImagem:focus::placeholder {
-    opacity: 0;
-    transition: 0.5s;
-  }
-
-  #addTreinador::placeholder,
-  #addImagem::placeholder {
-    opacity: 1;
-    color: #191970;
-    text-align: start;
-    transition: 0.2s;
-  }
-
-  #novoTreinador {
-    margin: 1.5rem 0.75rem;
-    padding: 0.25rem 0.75rem;
-    background-color: #f5f5f5;
-    color: #002351;
-    border: 1px solid #002351;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  #novoTreinador:hover,
-  #novoTreinador:focus {
-    box-shadow: 0 0 5px 1px #6a5acd;
-  }
-  
-  #novoTreinador:active {
-    background-color: #42b6ff;
-    box-shadow: 0 0 10px 2px #6a5acd;
-  }
-
-  #elementos {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #87ceeb;
-    color: #191970;
-    margin: 1.5rem 0.75rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 10px;
-    border: 1px solid #002351;
-    cursor: pointer;
+    margin-bottom: 1rem;
   }
 
-  #elementos:hover,
-  #elementos:focus {
-    box-shadow: 0 0 5px 1px #37a1cb;
+  .secao-info h2 {
+    margin-bottom: 0.5rem;
+    color: #002351;
   }
 
-  #elementos:active {
-    background-color: #c6e8fd;
-    box-shadow: 0 0 10px 2px #37a1cb;
-  }
-
-  #resultado {
+  .info-mobile {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 1rem 0.5rem;
+    box-shadow: 0 0 10px 3px #fff;
   }
 
-  #resultado img {
-    width: 2rem;
-    height: 2rem;
-    margin: 0.2rem;
+  .info-mobile h3 {
+    border: 1px solid #000;
+    text-align: center;
     padding: 0.25rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
-  .água {
-    background-color: #298ed2;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 1px #298ed2;
+  .info-mobile h3:first-child {
+    background-color: #00FF00;
   }
 
-  .fogo {
-    background-color: #ff4916;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #ff4916;
-}
-
-  .grama {
-    background-color: #2ecc71;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #2ecc71;
-}
-
-  .elétrico {
-    background-color: #f3d912;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #f3d912;
-}
-
-  .gelo {
-    background-color: #a5dcf2;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #a5dcf2;
-}
-
-  .lutador {
-    background-color: #ff1900;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #ff1900;
-}
-
-  .voador {
-    background-color: #71bddb;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #71bddb;
-}
-
-  .psíquico {
-    background-color: #d779fd;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #d779fd;
-}
-
-  .veneno {
-    background-color: #9b59b6;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #9b59b6;
-}
-
-  .terra {
-    background-color: #e67e22;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #e67e22;
-}
-
-  .pedra {
-    background-color: #95a5a6;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #95a5a6;
-}
-
-  .inseto {
-    background-color: #abd628;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #abd628;
-}
-
-  .fantasma {
-    background-color: #483d8b;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #483d8b;
-}
-
-  .noturno {
-    background-color: #272e34;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #272e34;
-}
-
-  .aço {
-    background-color: #95a5a6;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #95a5a6;
-}
-
-  .fada {
-    background-color: #ed7397;
-    border-radius: 15%; 
-    box-shadow: 0 0 5px 2px #ed7397;
-}
-
-  .dragão {
-    background-color: #191970;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #191970;
+  .info-mobile h3:nth-child(2) {
+    background-color: #FF0000;
   }
 
-  .normal {
-    background-color: #95a5a6;
-    border-radius: 15%;
-    box-shadow: 0 0 5px 2px #95a5a6;
+  .info-mobile h3:nth-child(3) {
+    background-color: #FFD700;
   }
 
-  /* responsividade */
-  @media (max-width:690px) {
-    body {
-        background-image: url('https://wallpapercave.com/wp/wp10311743.png');
-    }
+  .info-mobile h3:nth-child(4) {
+    background-color: #FFFFFF;
   }
 
-  @keyframes changeBorderColor {
-    0% {
-      box-shadow: 0 0 10px 5px red;
-    }
-    25% {
-      box-shadow: 0 0 10px 7px blue;
-    }
-    50% {
-      box-shadow: 0 0 10px 5px green;
-    }
-    75% {
-      box-shadow: 0 0 10px 7px yellow;
-    }
-    100% {
-      box-shadow: 0 0 10px 5px orange, 0 0 10px 10px purple;
-    }
+  .footer {
+    margin: 1.5rem;
   }
+}
+
+@media (min-width:1025px) and (max-width:1390px) {
+  .imgTreinador{
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:323px) {
+  .imgTreinador {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@keyframes changeBorderColor {
+  0% {
+    box-shadow: 0 0 10px 5px red;
+  }
+  25% {
+    box-shadow: 0 0 10px 7px blue;
+  }
+  50% {
+    box-shadow: 0 0 10px 5px green;
+  }
+  75% {
+    box-shadow: 0 0 10px 7px yellow;
+  }
+  100% {
+    box-shadow: 0 0 10px 5px orange, 0 0 10px 10px purple;
+  }
+}

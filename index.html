@@ -4,34 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela de Jogos</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link type="image/png" sizes="96x96" rel="icon" href="./img/pikachu-icon.png">
 </head>
 <body>
-    <h1>Classificação Pokémon</h1>
-    <table style="width:100%">
+  <div class="primeira-secao">
+    <a class="alura" href="https://alura.com.br/" target="_blank">
+    <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+    <div class="title-container">
+      <a target="_blank" href="https://github.com/CaiozinS2/Tabela-de-Jogos">
+        <div class="title">
+          <h1>Tabela de Jogos</h1>
+        </div>
+      </a>
+    </div>
+      <div class="addContainer">
+        <h2>Novo Treinador?</h2>
+        <input type="text" name="addTreinador" id="addTreinador" placeholder="Digite o seu nome..." maxlength="14" required>
+        <input type="text" name="addImagem" id="addImagem" placeholder="Digite a URL da imagem.." required>
+        <button id="elementos">Sortear Elementos</button>
+        <div id="resultado" class="elementos-sorteados"></div>
+        <button id="novoTreinador" onclick="adicionarTreinador()">Adicionar Treinador</button>
+      </div>
+  </div>
+  <div class="segunda-secao">
+    <h1 class="table-title">Classificação Pokémon</h1>
+    <table>
       <thead>
         <tr>
-          <th>Treinador</th>
-          <th>Vitórias</th>
-          <th>Derrotas</th>
-          <th>Bônus</th>
-          <th>Pontuação Total</th>
-          <th colspan="5">Ações</th>
+          <th class="treinador">Treinador</th>
+          <th class="vitórias">Vitórias</th>
+          <th class="derrotas">Derrotas</th>
+          <th class="bônus">Bônus</th>
+          <th class="pontuação-total">Pontuação Total</th>
+          <th class="ações" colspan="5">Ações</th>
         </tr>
       </thead>
       <tbody id="tabelaJogadores">
+            <div class="secao-info">
+              <h2>Informações sobre a Tabela</h2>
+                <div class="info-mobile">
+                    <h3>Quantidade de Vitórias</h3>
+                    <h3>Quantidade de Derrotas</h3>
+                    <h3>Pontuações em Bônus</h3>
+                    <h3>Pontuação Total</h3>
+                </div>
+            </div>
       </tbody>
     </table>
-    <div class="addContainer">
-      <input type="text" name="addTreinador" id="addTreinador" placeholder="Digite o seu nome..." maxlength="20">
-      <input type="text" name="addImagem" id="addImagem" placeholder="Digite a URL da imagem..">
-      <button id="elementos">Sortear Elementos</button>
-      <div id="resultado" class="elementos-sorteados"></div>
-      <button id="novoTreinador" onclick="adicionarTreinador()">Adicionar Treinador</button>
+    <div class="footer">
+      <h2>Feito por: Caio Anderson</h2>
     </div>
-      <a href="https://alura.com.br/" target="_blank">
-      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-    </a>
+  </div>
     <script src="JS/script.js"></script>
-  </body>
+</body>
 </html>

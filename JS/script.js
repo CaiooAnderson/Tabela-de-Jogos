@@ -7,7 +7,7 @@ var treinadores = [
         bonus:0,
         pontos:0,
         posicao:0,
-        elementos:['Noturno', 'Noturno', 'Noturno']
+        elementos:['Noturno', 'Noturno', 'Noturno'],
     }
 ]
 
@@ -118,10 +118,8 @@ function adicionarTreinador(index) {
     var nomeTreinador = document.getElementById('addTreinador').value;
     var imagemTreinador = document.getElementById('addImagem').value;
 
-    // Verifica se uma URL de imagem foi fornecida
     if (!imagemTreinador) {
-        // Se não houver URL, define uma imagem padrão
-        imagemTreinador = 'https://user-images.githubusercontent.com/63087888/87461299-8582b900-c60e-11ea-82ff-7a27a51859d0.png'; // Substitua 'URL_DA_IMAGEM_PADRAO' pela URL da imagem padrão desejada
+        imagemTreinador = 'https://user-images.githubusercontent.com/63087888/87461299-8582b900-c60e-11ea-82ff-7a27a51859d0.png';
     }
 
     var elementosSorteados = elementosSorteadosGlobal;
@@ -147,14 +145,12 @@ function adicionarTreinador(index) {
 }
 
 function limparDados() {
-
     document.getElementById('addTreinador').value = '';
     document.getElementById('addImagem').value = '';
 }
 
 function sortearElementos(quantidade, elementosExistentes = []) {
     var elementosSorteados = [];
-
     var tiposDisponiveis = tiposDeElementos.slice();
 
     elementosExistentes.forEach(elemento => {
@@ -174,7 +170,6 @@ function sortearElementos(quantidade, elementosExistentes = []) {
 
 function exibirImagens(elementos, index) {
     const elementoTabela = document.getElementById('tabelaJogadores');
-
     const elementosHTML = elementos.map(elemento => `<img class="imgElemento ${elemento.toLowerCase()}" src="${imagensElementos[elemento]}" alt="${elemento}">`).join('');
 
     treinadores[index].elementos = elementos;
