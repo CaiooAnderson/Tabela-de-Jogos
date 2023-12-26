@@ -1,7 +1,7 @@
 var treinadores = [
     {
         treinador:'Caio',
-        imagem:'../img/caio.png',
+        imagem:'../img/caio.webp',
         vitoria:0,
         derrota:0,
         bonus:0,
